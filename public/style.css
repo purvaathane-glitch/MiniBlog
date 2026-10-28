@@ -1,0 +1,464 @@
+
+/* ==========================================
+   InkSpace — Editorial Magazine Theme
+   Warm Ivory • Forest Green • Minimal Luxury
+   ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+:root {
+    --ink: #202b24;
+    --green: #294c3b;
+    --green-light: #e6ede5;
+    --cream: #f7f5ef;
+    --paper: #fffefa;
+    --muted: #777b71;
+    --line: #e4e2d9;
+    --accent: #bd8257;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+    color: white;
+    background: var(--green);
+}
+
+/* NAVIGATION */
+
+.navbar {
+    padding: 23px 0;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+}
+
+.navbar .container {
+    gap: 15px;
+}
+
+.navbar-brand {
+    color: var(--ink) !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 700 !important;
+    letter-spacing: -1px;
+}
+
+.navbar-brand::first-letter {
+    color: var(--accent);
+}
+
+.navbar .text-white-50 {
+    color: var(--muted) !important;
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
+}
+
+/* EDITORIAL HERO */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 20px 110px;
+    color: var(--ink);
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+}
+
+.hero::before {
+    content: "INK";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    color: rgba(41, 76, 59, 0.035);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(10rem, 26vw, 23rem);
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero .badge {
+    padding: 10px 16px;
+    color: var(--green);
+    background: var(--green-light);
+    border: 1px solid #d7e1d5;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.hero h1 {
+    margin: 24px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -2.5px;
+}
+
+.hero h1 span {
+    color: var(--green);
+    font-style: italic;
+}
+
+.hero p {
+    max-width: 500px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+.hero .btn {
+    margin-top: 26px !important;
+    padding: 14px 29px;
+    color: white;
+    background: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 3px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    transition: background 0.25s ease,
+                color 0.25s ease,
+                transform 0.25s ease;
+}
+
+.hero .btn:hover {
+    color: var(--green);
+    background: transparent;
+    transform: translateY(-2px);
+}
+
+/* MAIN LAYOUT */
+
+main.container {
+    max-width: 1240px;
+    padding-top: 75px !important;
+    padding-bottom: 90px !important;
+}
+
+.section-title {
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.35rem;
+    font-weight: 500;
+    letter-spacing: -0.8px;
+}
+
+main .text-secondary {
+    color: var(--muted) !important;
+    font-size: 0.9rem;
+}
+
+/* SECTION DIVIDER */
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 45px;
+    height: 2px;
+    margin-top: 17px;
+    background: var(--accent);
+}
+
+/* STORY LIST */
+
+#postList {
+    display: grid;
+    gap: 0;
+    margin-top: 30px !important;
+    border-top: 1px solid var(--line);
+}
+
+#postList > * {
+    min-width: 0;
+}
+
+#postList .card,
+#postList .post-card,
+#postList article {
+    padding: 28px 4px;
+    overflow-wrap: anywhere;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+    transition: padding-left 0.25s ease,
+                background 0.25s ease;
+}
+
+#postList .card:hover,
+#postList .post-card:hover,
+#postList article:hover {
+    padding-left: 12px;
+    background: rgba(255, 254, 250, 0.7);
+    box-shadow: none;
+}
+
+#postList h3,
+#postList h4,
+#postList .card-title {
+    margin-bottom: 12px;
+    color: var(--ink);
+    font-family: 'Playfair Display', serif;
+    font-size: 1.65rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+#postList p {
+    color: #696d64;
+    font-size: 0.93rem;
+    line-height: 1.85;
+}
+
+#postList small,
+#postList .text-muted {
+    color: var(--muted) !important;
+    font-size: 0.78rem;
+    letter-spacing: 0.2px;
+}
+
+/* WRITING PANEL */
+
+.write-card {
+    position: sticky;
+    top: 25px;
+    padding: 35px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--green);
+    border-radius: 2px;
+    box-shadow: 0 14px 40px rgba(38, 49, 37, 0.045);
+}
+
+.small-label {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.write-card h3 {
+    margin-top: 12px !important;
+    color: var(--ink);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+/* FORM LABELS */
+
+.form-label {
+    margin-bottom: 7px;
+    color: var(--ink);
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* INPUTS */
+
+.form-control {
+    min-height: 49px;
+    padding: 12px 14px;
+    color: var(--ink);
+    background: #fbfaf6;
+    border: 1px solid #e7e4da;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    transition: border-color 0.2s ease,
+                background 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.form-control::placeholder {
+    color: #aaa99f;
+}
+
+.form-control:hover {
+    border-color: #b8c6b7;
+}
+
+.form-control:focus {
+    color: var(--ink);
+    background: white;
+    border-color: var(--green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(41, 76, 59, 0.09);
+}
+
+textarea.form-control {
+    min-height: 160px;
+    resize: vertical;
+    line-height: 1.8;
+}
+
+/* PUBLISH BUTTON */
+
+.btn-publish {
+    min-height: 52px;
+    padding: 13px 20px;
+    color: white;
+    background: var(--green);
+    border: 1px solid var(--green);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.84rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: background 0.25s ease,
+                color 0.25s ease;
+}
+
+.btn-publish:hover {
+    color: var(--green);
+    background: transparent;
+    border-color: var(--green);
+}
+
+.btn-publish:active {
+    transform: scale(0.99);
+}
+
+.btn-publish:focus-visible,
+.hero .btn:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+/* FORM MESSAGES */
+
+#message {
+    font-size: 0.82rem;
+}
+
+#message:empty {
+    display: none;
+}
+
+#message.text-success {
+    color: var(--green) !important;
+}
+
+#message.text-danger {
+    color: #a63c32 !important;
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px 15px !important;
+    color: var(--muted);
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+    font-size: 0.78rem;
+    letter-spacing: 0.4px;
+}
+
+/* TABLET */
+
+@media (max-width: 991.98px) {
+    .hero {
+        padding: 80px 20px 90px;
+    }
+
+    main.container {
+        padding-top: 55px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .write-card {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 575.98px) {
+    .navbar {
+        padding: 16px 0;
+    }
+
+    .navbar .container {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .navbar-brand {
+        font-size: 1.45rem;
+    }
+
+    .navbar .text-white-50 {
+        font-size: 0.75rem;
+    }
+
+    .hero {
+        padding: 68px 18px 76px;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 0.91rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .write-card {
+        padding: 25px 20px;
+    }
+
+    .write-card h3 {
+        font-size: 1.75rem;
+    }
+
+    #postList h3,
+    #postList h4,
+    #postList .card-title {
+        font-size: 1.4rem;
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
